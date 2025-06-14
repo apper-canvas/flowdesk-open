@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { toast } from 'react-toastify';
+import { motion } from 'framer-motion';
 import ApperIcon from '@/components/ApperIcon';
 import Card from '@/components/atoms/Card';
 import Button from '@/components/atoms/Button';
-import ActivityItem from '@/components/molecules/ActivityItem';
-import { activityService } from '@/services';
+import { useTimelinePanel } from '@/Layout';
+
 const ContactCard = ({ 
   contact, 
   onEdit, 
@@ -15,10 +13,7 @@ const ContactCard = ({
   className = '',
   ...props 
 }) => {
-  const [showTimeline, setShowTimeline] = useState(false);
-  const [activities, setActivities] = useState([]);
-  const [loadingActivities, setLoadingActivities] = useState(false);
-
+  const { openTimelinePanel } = useTimelinePanel();
   const handleDelete = () => {
     if (window.confirm(`Are you sure you want to delete ${contact.name}?`)) {
       onDelete?.(contact.id);
@@ -33,28 +28,11 @@ const ContactCard = ({
   const handlePhoneClick = (e) => {
     e.stopPropagation();
     window.open(`tel:${contact.phone}`, '_blank');
-  };
+};
 
-  const loadActivities = async () => {
-    if (activities.length > 0) return; // Already loaded
-    
-    setLoadingActivities(true);
-    try {
-      const contactActivities = await activityService.getByContactId(contact.id);
-      setActivities(contactActivities);
-    } catch (error) {
-      toast.error('Failed to load activity timeline');
-    } finally {
-      setLoadingActivities(false);
-    }
-  };
-
-  const handleTimelineToggle = async (e) => {
+  const handleTimelineClick = (e) => {
     e.stopPropagation();
-    if (!showTimeline) {
-      await loadActivities();
-    }
-    setShowTimeline(!showTimeline);
+    openTimelinePanel(contact);
   };
   return (
     <motion.div
@@ -163,68 +141,18 @@ const ContactCard = ({
             >
               Call
             </Button>
-            <Button
+<Button
               size="sm"
               variant="ghost"
-              onClick={handleTimelineToggle}
+              onClick={handleTimelineClick}
               className="text-xs"
-              icon={showTimeline ? "ChevronUp" : "Clock"}
+              icon="Clock"
             >
-              {showTimeline ? "Hide" : "Timeline"}
+              Timeline
             </Button>
           </div>
         </div>
-
-        {/* Timeline Section */}
-        <AnimatePresence>
-          {showTimeline && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="mt-4 pt-4 border-t border-gray-100"
-            >
-              <div className="flex items-center mb-3">
-                <ApperIcon name="Clock" className="w-4 h-4 text-gray-400 mr-2" />
-                <h4 className="text-sm font-medium text-gray-900">Activity Timeline</h4>
-              </div>
-
-              {loadingActivities ? (
-                <div className="space-y-3">
-                  {[...Array(3)].map((_, i) => (
-                    <div key={i} className="animate-pulse flex space-x-3">
-                      <div className="w-8 h-8 bg-gray-200 rounded-full flex-shrink-0"></div>
-                      <div className="flex-1 space-y-2">
-                        <div className="h-3 bg-gray-200 rounded w-3/4"></div>
-                        <div className="h-2 bg-gray-200 rounded w-1/2"></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : activities.length > 0 ? (
-                <div className="space-y-3 max-h-60 overflow-y-auto">
-                  {activities.map((activity, index) => (
-                    <ActivityItem
-                      key={activity.id}
-                      activity={activity}
-                      showContact={false}
-                      index={index}
-                      className="text-xs"
-                    />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-4">
-                  <ApperIcon name="Clock" className="w-8 h-8 text-gray-300 mx-auto mb-2" />
-                  <p className="text-xs text-gray-500">No activities yet</p>
-                  <p className="text-xs text-gray-400">Start engaging with this contact</p>
-                </div>
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </Card>
+</Card>
     </motion.div>
   );
 };

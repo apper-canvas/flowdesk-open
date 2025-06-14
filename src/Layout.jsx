@@ -1,12 +1,34 @@
-import { useState } from 'react';
+import { useState, createContext, useContext } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ApperIcon from '@/components/ApperIcon';
 import { routeArray } from '@/config/routes';
+import ContactTimelinePanel from '@/components/organisms/ContactTimelinePanel';
+
+const TimelinePanelContext = createContext();
+
+export const useTimelinePanel = () => {
+  const context = useContext(TimelinePanelContext);
+  if (!context) {
+    throw new Error('useTimelinePanel must be used within TimelinePanelProvider');
+  }
+  return context;
+};
 
 const Layout = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [timelinePanelOpen, setTimelinePanelOpen] = useState(false);
+  const [selectedContact, setSelectedContact] = useState(null);
 
+  const openTimelinePanel = (contact) => {
+    setSelectedContact(contact);
+    setTimelinePanelOpen(true);
+  };
+
+  const closeTimelinePanel = () => {
+    setTimelinePanelOpen(false);
+    setSelectedContact(null);
+  };
   return (
     <div className="h-screen flex overflow-hidden">
       {/* Desktop Sidebar */}
@@ -120,12 +142,21 @@ const Layout = () => {
         )}
       </AnimatePresence>
 
-      {/* Main Content */}
+{/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         <main className="flex-1 overflow-y-auto bg-surface">
-          <Outlet />
+          <TimelinePanelContext.Provider value={{ openTimelinePanel, closeTimelinePanel }}>
+            <Outlet />
+          </TimelinePanelContext.Provider>
         </main>
       </div>
+
+      {/* Contact Timeline Side Panel */}
+      <ContactTimelinePanel
+        isOpen={timelinePanelOpen}
+        contact={selectedContact}
+        onClose={closeTimelinePanel}
+      />
     </div>
   );
 };
