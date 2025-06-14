@@ -229,9 +229,9 @@ const ContactTimelinePanel = ({ isOpen, contact, onClose }) => {
                     >
                       <ApperIcon name="Clock" className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                     </motion.div>
-                    <h4 className="text-lg font-medium text-gray-900 mb-2">No activities yet</h4>
+<h4 className="text-lg font-medium text-gray-900 mb-2">No activities yet</h4>
                     <p className="text-sm text-gray-500 mb-4">
-                      Start engaging with {contact.name.split(' ')[0]} to build your relationship
+                      Start engaging with {contact?.name?.split(' ')?.[0] ?? 'this contact'} to build your relationship
                     </p>
                     <div className="flex justify-center space-x-3">
                       <Button onClick={handleEmailClick} variant="outline" size="sm">
