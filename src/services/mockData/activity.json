@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "type": "call",
+    "subject": "Initial Discovery Call",
+    "notes": "Great conversation about their current workflow challenges. Sarah mentioned they're using 5 different tools and losing productivity in context switching. Scheduled follow-up demo.",
+    "contactId": "1",
+    "dealId": "1",
+    "date": "2024-03-18T14:30:00Z",
+    "duration": 45
+  },
+  {
+    "id": "2",
+    "type": "email",
+    "subject": "Product Demo Follow-up",
+    "notes": "Sent detailed proposal with pricing breakdown and implementation timeline. Included case studies from similar-sized companies in their industry.",
+    "contactId": "2",
+    "dealId": "2",
+    "date": "2024-03-17T10:15:00Z",
+    "duration": 0
+  },
+  {
+    "id": "3",
+    "type": "meeting",
+    "subject": "Technical Architecture Review",
+    "notes": "Deep dive session with their CTO and engineering team. Reviewed our API capabilities, security features, and integration options. Very positive reception.",
+    "contactId": "2",
+    "dealId": "2",
+    "date": "2024-03-16T16:00:00Z",
+    "duration": 90
+  },
+  {
+    "id": "4",
+    "type": "call",
+    "subject": "Pricing Discussion",
+    "notes": "Emma expressed concerns about budget constraints. Discussed our startup-friendly pricing and growth plans. She's waiting for Series A funding round to close.",
+    "contactId": "3",
+    "dealId": "3",
+    "date": "2024-03-15T11:30:00Z",
+    "duration": 30
+  },
+  {
+    "id": "5",
+    "type": "email",
+    "subject": "Compliance Documentation",
+    "notes": "Sent SOC 2 reports, security whitepaper, and compliance documentation requested by their legal team. David confirmed they're moving forward with evaluation process.",
+    "contactId": "4",
+    "dealId": "4",
+    "date": "2024-03-14T09:00:00Z",
+    "duration": 0
+  },
+  {
+    "id": "6",
+    "type": "meeting",
+    "subject": "Contract Signing & Onboarding",
+    "notes": "Fantastic meeting! Lisa signed the annual contract and we kicked off the onboarding process. Their team is excited to get started with our design collaboration features.",
+    "contactId": "5",
+    "dealId": "5",
+    "date": "2024-03-13T15:30:00Z",
+    "duration": 60
+  },
+  {
+    "id": "7",
+    "type": "call",
+    "subject": "Quarterly Business Review",
+    "notes": "Check-in call with Sarah to discuss their usage and satisfaction. Team is seeing 40% productivity improvement. Discussed potential expansion to other departments.",
+    "contactId": "1",
+    "dealId": null,
+    "date": "2024-03-12T13:00:00Z",
+    "duration": 25
+  },
+  {
+    "id": "8",
+    "type": "email",
+    "subject": "Feature Request Follow-up",
+    "notes": "Michael requested advanced reporting capabilities for their enterprise setup. Forwarded to product team and provided timeline for upcoming releases.",
+    "contactId": "2",
+    "dealId": null,
+    "date": "2024-03-11T08:45:00Z",
+    "duration": 0
+  }
+]

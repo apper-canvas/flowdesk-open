@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1",
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@techcorp.com",
+    "phone": "+1 (555) 123-4567",
+    "company": "TechCorp Solutions",
+    "position": "VP of Engineering",
+    "notes": "Met at the SF Tech Conference 2024. Very interested in our enterprise package. Has budget authority and decision-making power.",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "updatedAt": "2024-02-20T14:45:00Z"
+  },
+  {
+    "id": "2",
+    "name": "Michael Chen",
+    "email": "m.chen@innovateplus.io",
+    "phone": "+1 (555) 987-6543",
+    "company": "InnovatePlus",
+    "position": "CTO",
+    "notes": "Referred by Sarah Johnson. Looking for scalable solutions for their growing team of 200+ developers. Very technical and detail-oriented.",
+    "createdAt": "2024-01-22T09:15:00Z",
+    "updatedAt": "2024-03-05T11:20:00Z"
+  },
+  {
+    "id": "3",
+    "name": "Emma Rodriguez",
+    "email": "emma.r@startupflow.com",
+    "phone": "+1 (555) 456-7890",
+    "company": "StartupFlow",
+    "position": "Founder & CEO",
+    "notes": "Early-stage startup founder. Passionate about productivity tools. Limited budget but high growth potential. Interested in our startup pricing tier.",
+    "createdAt": "2024-02-03T16:45:00Z",
+    "updatedAt": "2024-03-10T13:30:00Z"
+  },
+  {
+    "id": "4",
+    "name": "David Kim",
+    "email": "david.kim@globalenterprises.com",
+    "phone": "+1 (555) 234-5678",
+    "company": "Global Enterprises Inc",
+    "position": "Head of Operations",
+    "notes": "Fortune 500 company contact. Looking to streamline operations across 15 global offices. Requires extensive integration capabilities and compliance features.",
+    "createdAt": "2024-02-12T08:00:00Z",
+    "updatedAt": "2024-03-15T17:15:00Z"
+  },
+  {
+    "id": "5",
+    "name": "Lisa Thompson",
+    "email": "lisa.t@creativestudio.design",
+    "phone": "+1 (555) 345-6789",
+    "company": "Creative Studio Design",
+    "position": "Creative Director",
+    "notes": "Runs a boutique design agency with 25 employees. Values aesthetics and user experience highly. Interested in our design-focused features and collaboration tools.",
+    "createdAt": "2024-02-18T12:30:00Z",
+    "updatedAt": "2024-03-12T10:45:00Z"
+  }
+]

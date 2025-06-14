@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1",
+    "title": "TechCorp Enterprise License",
+    "value": 85000,
+    "stage": "Negotiation",
+    "contactId": "1",
+    "probability": 75,
+    "expectedClose": "2024-04-15",
+    "notes": "Large enterprise deal with annual contract. Negotiating on implementation timeline and support SLA. Very positive signals from decision makers.",
+    "createdAt": "2024-01-20T14:30:00Z"
+  },
+  {
+    "id": "2",
+    "title": "InnovatePlus Team Plan",
+    "value": 24000,
+    "stage": "Proposal",
+    "contactId": "2",
+    "probability": 60,
+    "expectedClose": "2024-04-30",
+    "notes": "Mid-market deal for 200-user license. Waiting for technical evaluation to complete. They're comparing us with two other vendors.",
+    "createdAt": "2024-02-05T11:15:00Z"
+  },
+  {
+    "id": "3",
+    "title": "StartupFlow Starter Package",
+    "value": 3600,
+    "stage": "Qualified",
+    "contactId": "3",
+    "probability": 45,
+    "expectedClose": "2024-05-20",
+    "notes": "Startup package with growth potential. Emma is very engaged but needs to secure Series A funding first. Worth nurturing for future expansion.",
+    "createdAt": "2024-02-10T09:45:00Z"
+  },
+  {
+    "id": "4",
+    "title": "Global Enterprises Multi-Site",
+    "value": 150000,
+    "stage": "Lead",
+    "contactId": "4",
+    "probability": 25,
+    "expectedClose": "2024-06-30",
+    "notes": "Massive enterprise opportunity across 15 global offices. Long sales cycle expected. Need to demonstrate compliance and integration capabilities.",
+    "createdAt": "2024-02-25T16:20:00Z"
+  },
+  {
+    "id": "5",
+    "title": "Creative Studio Pro Plan",
+    "value": 12000,
+    "stage": "Closed Won",
+    "contactId": "5",
+    "probability": 100,
+    "expectedClose": "2024-03-15",
+    "notes": "Successfully closed! Lisa loved our collaboration features and design-focused interface. They've already started onboarding their team.",
+    "createdAt": "2024-02-15T13:00:00Z"
+  }
+]
