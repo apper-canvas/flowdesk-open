@@ -48,7 +48,7 @@ const Contacts = () => {
 
     const query = searchQuery.toLowerCase();
     const filtered = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(query) ||
+(contact.Name || contact.name || '').toLowerCase().includes(query) ||
       contact.email.toLowerCase().includes(query) ||
       contact.company.toLowerCase().includes(query) ||
       contact.position.toLowerCase().includes(query)

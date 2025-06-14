@@ -35,10 +35,10 @@ const Deals = () => {
         contactMap[contact.id] = contact;
       });
 
-      // Add contact names to deals
+// Add contact names to deals
       const dealsWithContacts = dealsResult.map(deal => ({
         ...deal,
-        contactName: contactMap[deal.contactId]?.name || 'Unknown Contact'
+        contactName: contactMap[deal.contact_id]?.Name || contactMap[deal.contact_id]?.name || 'Unknown Contact'
       }));
 
       setDeals(dealsWithContacts);
@@ -51,12 +51,12 @@ const Deals = () => {
     }
   };
 
-  const handleDealSaved = (savedDeal) => {
+const handleDealSaved = (savedDeal) => {
     // Find contact name for the saved deal
-    const contact = contacts.find(c => c.id === savedDeal.contactId);
+    const contact = contacts.find(c => c.id === savedDeal.contact_id);
     const dealWithContact = {
       ...savedDeal,
-      contactName: contact?.name || 'Unknown Contact'
+      contactName: contact?.Name || contact?.name || 'Unknown Contact'
     };
 
     if (editingDeal) {

@@ -96,9 +96,9 @@ const DealCard = ({
           
           <div className="flex items-center text-sm text-gray-600">
             <ApperIcon name="Calendar" className="w-4 h-4 mr-2 text-gray-400" />
-            <span>
-              {deal.expectedClose 
-                ? format(new Date(deal.expectedClose), 'MMM d, yyyy')
+<span>
+              {(deal.expected_close || deal.expectedClose)
+                ? format(new Date(deal.expected_close || deal.expectedClose), 'MMM d, yyyy')
                 : 'No close date set'
               }
             </span>

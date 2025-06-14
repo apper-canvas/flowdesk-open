@@ -50,12 +50,12 @@ const ContactCard = ({
       >
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center font-semibold">
-              {contact.name?.charAt(0)?.toUpperCase() || 'C'}
+<div className="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center font-semibold">
+              {(contact.Name || contact.name)?.charAt(0)?.toUpperCase() || 'C'}
             </div>
             <div>
               <h3 className="font-semibold text-gray-900 group-hover:text-primary transition-colors">
-                {contact.name}
+                {contact.Name || contact.name}
               </h3>
               <p className="text-sm text-gray-500">{contact.position}</p>
             </div>
@@ -122,7 +122,7 @@ const ContactCard = ({
         
 <div className="flex items-center justify-between pt-3 border-t border-gray-100">
           <span className="text-xs text-gray-400">
-            Added {new Date(contact.createdAt).toLocaleDateString()}
+            Added {new Date(contact.created_at || contact.createdAt).toLocaleDateString()}
           </span>
           <div className="flex space-x-2">
             <Button 

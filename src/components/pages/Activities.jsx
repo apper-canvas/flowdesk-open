@@ -60,10 +60,10 @@ const Activities = () => {
       });
 
       // Add contact and deal names to activities
-      const activitiesWithNames = activitiesResult.map(activity => ({
+const activitiesWithNames = activitiesResult.map(activity => ({
         ...activity,
-        contactName: contactMap[activity.contactId]?.name || 'Unknown Contact',
-        dealTitle: dealMap[activity.dealId]?.title || null
+        contactName: contactMap[activity.contact_id]?.Name || contactMap[activity.contact_id]?.name || 'Unknown Contact',
+        dealTitle: dealMap[activity.deal_id]?.title || null
       }));
 
       setActivities(activitiesWithNames);
@@ -109,14 +109,14 @@ const Activities = () => {
     return counts;
   };
 
-  const handleActivitySaved = (savedActivity) => {
+const handleActivitySaved = (savedActivity) => {
     // Find contact and deal names for the saved activity
-    const contact = contacts.find(c => c.id === savedActivity.contactId);
-    const deal = deals.find(d => d.id === savedActivity.dealId);
+    const contact = contacts.find(c => c.id === savedActivity.contact_id);
+    const deal = deals.find(d => d.id === savedActivity.deal_id);
     
     const activityWithNames = {
       ...savedActivity,
-      contactName: contact?.name || 'Unknown Contact',
+      contactName: contact?.Name || contact?.name || 'Unknown Contact',
       dealTitle: deal?.title || null
     };
 

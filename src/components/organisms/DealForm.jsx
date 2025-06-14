@@ -7,13 +7,13 @@ import Button from '@/components/atoms/Button';
 import ApperIcon from '@/components/ApperIcon';
 
 const DealForm = ({ deal, onSuccess, onCancel, className = '' }) => {
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     title: deal?.title || '',
     value: deal?.value || '',
     stage: deal?.stage || 'Lead',
-    contactId: deal?.contactId || '',
+    contactId: deal?.contact_id || deal?.contactId || '',
     probability: deal?.probability || 25,
-    expectedClose: deal?.expectedClose || '',
+    expectedClose: deal?.expected_close || deal?.expectedClose || '',
     notes: deal?.notes || ''
   });
   const [contacts, setContacts] = useState([]);
@@ -181,9 +181,9 @@ const DealForm = ({ deal, onSuccess, onCancel, className = '' }) => {
               disabled={loadingContacts}
             >
               <option value="">Select a contact</option>
-              {contacts.map(contact => (
+{contacts.map(contact => (
                 <option key={contact.id} value={contact.id}>
-                  {contact.name} - {contact.company}
+                  {contact.Name || contact.name} - {contact.company}
                 </option>
               ))}
             </select>

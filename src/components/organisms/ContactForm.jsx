@@ -7,8 +7,8 @@ import Button from '@/components/atoms/Button';
 import ApperIcon from '@/components/ApperIcon';
 
 const ContactForm = ({ contact, onSuccess, onCancel, className = '' }) => {
-  const [formData, setFormData] = useState({
-    name: contact?.name || '',
+const [formData, setFormData] = useState({
+    name: contact?.Name || contact?.name || '',
     email: contact?.email || '',
     phone: contact?.phone || '',
     company: contact?.company || '',
