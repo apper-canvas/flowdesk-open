@@ -29,7 +29,7 @@ const Input = forwardRef(({
   };
 
   return (
-    <div className={`relative ${className}`}>
+<div className={`relative ${className}`}>
       {label && (
         <motion.label
           animate={{
@@ -38,7 +38,9 @@ const Input = forwardRef(({
             color: focused ? '#4F46E5' : error ? '#EF4444' : '#6B7280'
           }}
           transition={{ duration: 0.2 }}
-          className="absolute left-3 top-2.5 text-sm font-medium pointer-events-none origin-left z-10"
+          className={`absolute top-2.5 text-sm font-medium pointer-events-none origin-left z-10 ${
+            icon && iconPosition === 'left' ? 'left-10' : 'left-3'
+          }`}
         >
           {label}
         </motion.label>
@@ -57,12 +59,12 @@ const Input = forwardRef(({
           value={value}
           onChange={handleChange}
           onFocus={handleFocus}
-          onBlur={handleBlur}
+onBlur={handleBlur}
           placeholder={focused ? placeholder : ''}
           className={`
             w-full px-3 py-2.5 border rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1
             ${label ? 'pt-6 pb-2' : ''}
-            ${icon && iconPosition === 'left' ? 'pl-10' : ''}
+            ${icon && iconPosition === 'left' ? (label ? 'pl-12' : 'pl-10') : ''}
             ${icon && iconPosition === 'right' ? 'pr-10' : ''}
             ${error 
               ? 'border-error focus:border-error focus:ring-error/20' 
